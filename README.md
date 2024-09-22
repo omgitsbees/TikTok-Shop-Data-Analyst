@@ -248,3 +248,158 @@ The output of this project is a heatmap that shows the retention rates for diffe
 This insight can help in designing better customer retention strategies, such as re-engagement campaigns or personalized offers to at-risk customers.
 
 ![Screenshot 2024-09-22 151519](https://github.com/user-attachments/assets/690616f7-788d-46e3-838e-31a64865f33d)
+
+-----------------------------------------------------------------------------------------------------------------
+
+A/B Testing for Feature Rollouts: TikTok Shop
+
+This project simulates an A/B test for TikTok Shop to evaluate the impact of a new checkout process on user behavior. The goal is to determine whether the new checkout process increases the conversion rate (percentage of users who complete a purchase) compared to the current checkout process.
+Table of Contents
+
+    Overview
+    A/B Test Scenario
+    Key Metrics
+    Methodology
+    Project Structure
+    Installation
+    Usage
+    Results
+    Contributing
+    License
+
+Overview
+
+A/B testing is a common approach to measure the effect of changes or new features by comparing a control group (existing feature) to a test group (new feature). In this project, we simulate user data and conduct an A/B test to measure the effect of a new checkout process on the conversion rate for TikTok Shop.
+
+The primary focus of this test is to determine whether the new checkout process leads to a statistically significant improvement in conversion rates and whether TikTok Shop should consider rolling out the new feature to all users.
+A/B Test Scenario
+Hypothesis:
+
+The new checkout process will improve the conversion rate, resulting in more users completing a purchase.
+Groups:
+
+    Control Group: Users experiencing the existing checkout process.
+    Test Group: Users experiencing the new checkout process.
+
+Key Metric:
+
+    Conversion Rate: The percentage of users who complete a purchase after adding items to their cart.
+
+Key Metrics
+
+    Conversion Rate:
+    The percentage of users in each group that complete a purchase.
+
+    text
+
+conversion_rate = (number of purchases) / (number of users)
+
+Lift:
+The percentage improvement in the conversion rate of the test group compared to the control group.
+
+text
+
+    lift = ((test_conversion_rate - control_conversion_rate) / control_conversion_rate) * 100
+
+    Statistical Significance:
+    The z-test is used to determine whether the difference in conversion rates between the control and test groups is statistically significant.
+
+Methodology
+Steps:
+
+    Simulate User Data: We simulate the behavior of 10,000 users, dividing them equally into the control group (with a 30% conversion rate) and the test group (with a 35% conversion rate).
+    Calculate Conversion Rates: Calculate the average conversion rate for both groups.
+    Perform Hypothesis Testing: Conduct a z-test to determine if the difference in conversion rates is statistically significant.
+    Visualize Results: Display conversion rates and statistical test results using a bar chart.
+
+Project Structure
+
+bash
+
+├── ab_testing_simulation.py  # Main script for simulating A/B testing
+├── README.md                 # Project readme file
+└── requirements.txt          # Python dependencies
+
+Installation
+
+    Clone the repository:
+
+    bash
+
+git clone https://github.com/your-username/tiktok-ab-test.git
+cd tiktok-ab-test
+
+Create a virtual environment (optional but recommended):
+
+bash
+
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
+
+Install the required dependencies:
+
+bash
+
+    pip install -r requirements.txt
+
+Usage
+
+    Run the simulation: To run the A/B test simulation, execute the Python script:
+
+    bash
+
+    python ab_testing_simulation.py
+
+    Script Output: The script will:
+        Simulate user data for both control and test groups.
+        Calculate conversion rates for each group.
+        Perform a z-test to determine the statistical significance of the difference.
+        Display a bar chart showing conversion rates for both groups.
+
+Output Example:
+
+    Conversion Rates:
+
+    bash
+
+Conversion Rates:
+group
+control    0.2998
+test       0.3497
+Name: converted, dtype: float64
+
+Z-Score and P-Value:
+
+bash
+
+Z-Score: 4.34
+P-Value: 0.00001
+
+Lift:
+
+bash
+
+    Lift: 16.64%
+
+    Visualization: A bar chart comparing conversion rates for the control and test groups is generated:
+
+    Conversion Rate Chart (sample placeholder image)
+
+Results
+
+    Conversion Rate:
+        The control group has a conversion rate of ~30%.
+        The test group (new checkout process) has a conversion rate of ~35%.
+
+    Statistical Significance:
+    The z-test results in a z-score of 4.34 and a p-value of 0.00001, indicating that the difference in conversion rates is statistically significant.
+
+    Lift:
+    The new checkout process results in a 16.64% lift in conversion rates compared to the control group.
+
+Conclusion:
+
+    The A/B test suggests that the new checkout process significantly improves conversion rates.
+    With a statistically significant improvement and a notable lift, TikTok Shop may want to consider rolling out this feature to all users.
+
+![Screenshot 2024-09-22 152045](https://github.com/user-attachments/assets/5c24f2f7-08c4-4f8e-9f47-9c48ed35b3ee)
