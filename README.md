@@ -403,3 +403,102 @@ Conclusion:
     With a statistically significant improvement and a notable lift, TikTok Shop may want to consider rolling out this feature to all users.
 
 ![Screenshot 2024-09-22 152045](https://github.com/user-attachments/assets/5c24f2f7-08c4-4f8e-9f47-9c48ed35b3ee)
+
+-----------------------------------------------------------------------------------------------------------------
+
+TikTok Shop Sales Forecasting
+This repository contains a Python script for simulating and forecasting daily sales data for a TikTok Shop using the ARIMA model. The script includes data simulation, time-series analysis, model fitting, forecasting, and evaluation.
+
+Table of Contents
+Installation
+Usage
+Code Explanation
+Results
+Contributing
+License
+Installation
+To run this script, you’ll need to have Python installed along with the following libraries:
+
+pip install pandas numpy matplotlib seaborn statsmodels scikit-learn
+
+Usage
+Clone the repository:
+git clone https://github.com/yourusername/tiktok-shop-sales-forecasting.git
+cd tiktok-shop-sales-forecasting
+
+Run the script:
+python sales_forecasting.py
+
+Code Explanation
+Step 1: Simulate Sales Data
+The script simulates daily sales data for two years, incorporating a trend and seasonality.
+
+Python
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Simulate sales data
+np.random.seed(42)
+date_range = pd.date_range(start='2022-01-01', end='2023-12-31', freq='D')
+sales = 1000 + 10 * np.arange(len(date_range)) + 500 * np.sin(np.linspace(0, 3 * np.pi, len(date_range))) + np.random.normal(0, 100, len(date_range))
+sales_data = pd.DataFrame({'date': date_range, 'sales': sales})
+AI-generated code. Review and use carefully. More info on FAQ.
+Step 2: Prepare Data for Time-Series Analysis
+The data is prepared by setting the date as the index and splitting it into training and test sets.
+
+Python
+
+# Prepare data
+sales_data.set_index('date', inplace=True)
+train_data = sales_data.iloc[:-60]
+test_data = sales_data.iloc[-60:]
+AI-generated code. Review and use carefully. More info on FAQ.
+Step 3: Fit the ARIMA Model
+An ARIMA(5, 1, 0) model is fitted to the training data.
+
+Python
+
+from statsmodels.tsa.arima_model import ARIMA
+
+# Fit ARIMA model
+model = ARIMA(train_data['sales'], order=(5, 1, 0))
+arima_result = model.fit(disp=False)
+AI-generated code. Review and use carefully. More info on FAQ.
+Step 4: Forecast Future Sales
+The model forecasts sales for the next 60 days.
+
+Python
+
+# Forecast
+forecast, stderr, conf_int = arima_result.forecast(steps=60)
+forecast_df = pd.DataFrame({
+    'date': test_data.index,
+    'forecast': forecast,
+    'lower_conf': conf_int[:, 0],
+    'upper_conf': conf_int[:, 1]
+}).set_index('date')
+AI-generated code. Review and use carefully. More info on FAQ.
+Step 5: Evaluate the Model
+The forecast is evaluated using Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE).
+
+Python
+
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+
+# Evaluate
+mae = mean_absolute_error(test_data['sales'], forecast_df['forecast'])
+rmse = np.sqrt(mean_squared_error(test_data['sales'], forecast_df['forecast']))
+print(f'Mean Absolute Error (MAE): {mae:.2f}')
+print(f'Root Mean Squared Error (RMSE): {rmse:.2f}')
+AI-generated code. Review and use carefully. More info on FAQ.
+Step 6: Visualize the Actual vs Forecasted Sales
+The actual and forecasted sales are visualized.
+
+Results
+The script outputs the Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE) of the forecast, and visualizes the actual vs forecasted sales data.
+
+![Screenshot 2024-09-22 152715](https://github.com/user-attachments/assets/d3593b0f-2155-42a5-afed-e0c77c1893c6)
+
+-----------------------------------------------------------------------------------------------------------------
