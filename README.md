@@ -118,3 +118,133 @@ Once the analysis is complete, customers will be segmented into categories such 
 Sample Visual Output:
 
 ![Screenshot 2024-09-22 150759](https://github.com/user-attachments/assets/eeb3c582-3a2a-4bbe-ad57-1d4cb7d29e29)
+
+------------------------------------------------------------------------------------------------------------------
+
+Cohort Analysis for Customer Retention
+
+This project demonstrates how to perform Cohort Analysis to track customer retention over time for an e-commerce platform. Cohort analysis groups customers based on their first purchase date and helps identify how different groups (cohorts) behave across subsequent time periods. This type of analysis is crucial for understanding customer retention patterns and improving long-term customer engagement.
+Table of Contents
+
+    Overview
+    Dataset
+    Cohort Analysis Methodology
+    Project Structure
+    Installation
+    Usage
+    Results
+    Contributing
+    License
+
+Overview
+
+Cohort analysis is a technique used to understand customer behavior by grouping them into cohorts, usually based on their first purchase date. By tracking these cohorts over time, businesses can gain insights into customer retention, loyalty, and churn.
+
+This project uses the Online Retail Dataset to group customers into cohorts based on the month of their first purchase. We then analyze how long customers from each cohort continue to make purchases in subsequent months.
+Key Steps:
+
+    Data Preparation: Clean the data and format it for cohort analysis.
+    Cohort Definition: Define cohorts based on the month of the customer's first purchase.
+    Retention Calculation: Calculate the retention rate of each cohort over time.
+    Visualization: Create a heatmap to visualize the retention rates for each cohort over several months.
+
+Dataset
+
+The dataset used is the Online Retail Dataset from the UCI Machine Learning Repository. It contains transactional data from a UK-based online retailer over the course of one year (2010-2011).
+Dataset Features:
+
+    InvoiceNo: Invoice number (unique identifier for each transaction)
+    StockCode: Product code
+    Description: Product description
+    Quantity: Quantity of the product purchased
+    InvoiceDate: Date the invoice was generated
+    UnitPrice: Price per unit of the product
+    CustomerID: Unique identifier for the customer
+    Country: Country of the customer
+
+Cohort Analysis Methodology
+
+    Cohort Definition:
+        Customers are grouped into cohorts based on their first purchase month.
+        We calculate the CohortIndex, which represents how many months have passed since the customer’s first purchase.
+
+    Retention Calculation:
+        For each cohort, the number of returning customers is tracked for each subsequent month.
+        The retention rate is calculated as the percentage of customers who make repeat purchases in subsequent months.
+
+    Visualization:
+        The retention rates for each cohort are displayed in a heatmap, where each row represents a cohort and each column represents months since the first purchase.
+
+Project Structure
+
+bash
+
+├── data/
+│   └── Online Retail Dataset (or link to data source)
+├── cohort_analysis.py  # Main script for cohort analysis
+├── README.md           # Project readme file
+└── requirements.txt    # Python dependencies
+
+Installation
+
+    Clone the repository:
+
+    bash
+
+git clone https://github.com/your-username/cohort-analysis-retention.git
+cd cohort-analysis-retention
+
+Create a virtual environment (optional but recommended):
+
+bash
+
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
+
+Install the required dependencies:
+
+bash
+
+    pip install -r requirements.txt
+
+    Download the dataset:
+        The dataset can be downloaded from the UCI Online Retail Dataset. Place it in the data/ folder.
+
+Usage
+
+To run the Cohort Analysis and visualize the customer retention rates:
+
+    Ensure the dataset is in the correct folder (data/Online Retail Dataset.xlsx).
+
+    Run the Python script:
+
+    bash
+
+    python cohort_analysis.py
+
+This script will:
+
+    Clean the data.
+    Calculate customer cohorts and retention rates.
+    Display a heatmap of retention rates over time.
+
+Output:
+
+    Cohort Table: A table showing the number of customers retained over time.
+    Retention Heatmap: A heatmap that visualizes the retention rates of each cohort.
+
+Sample Visualization:
+
+The heatmap will look similar to the example below:
+
+Results
+
+The output of this project is a heatmap that shows the retention rates for different customer cohorts over time. You can use the heatmap to understand:
+
+    Which cohorts have the highest retention rates.
+    How customer retention changes over time.
+    At which point customers are most likely to stop purchasing (churn).
+
+This insight can help in designing better customer retention strategies, such as re-engagement campaigns or personalized offers to at-risk customers.
+
+![Screenshot 2024-09-22 151519](https://github.com/user-attachments/assets/690616f7-788d-46e3-838e-31a64865f33d)
