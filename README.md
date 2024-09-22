@@ -407,6 +407,7 @@ Conclusion:
 -----------------------------------------------------------------------------------------------------------------
 
 TikTok Shop Sales Forecasting
+
 This repository contains a Python script for simulating and forecasting daily sales data for a TikTok Shop using the ARIMA model. The script includes data simulation, time-series analysis, model fitting, forecasting, and evaluation.
 
 Table of Contents
