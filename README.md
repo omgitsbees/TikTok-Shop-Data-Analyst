@@ -503,3 +503,27 @@ The script outputs the Mean Absolute Error (MAE) and Root Mean Squared Error (RM
 ![Screenshot 2024-09-22 152715](https://github.com/user-attachments/assets/d3593b0f-2155-42a5-afed-e0c77c1893c6)
 
 -----------------------------------------------------------------------------------------------------------------
+
+Customer Churn Prediction Using Machine Learning
+
+Overview
+
+This project aims to predict customer churn in an e-commerce/retail setting using machine learning techniques. Customer churn, or customer attrition, is a critical metric for businesses to understand as it helps in retaining customers and improving overall business profitability.
+Features
+
+    Data Exploration: Analyzed and processed customer data to understand patterns and correlations.
+    Feature Engineering: Created new features such as recency of last interaction and contract length encoding.
+    Model Building: Trained a Random Forest Classifier to predict customer churn.
+    Evaluation: Evaluated model performance using accuracy, confusion matrix, and classification report.
+
+Dataset
+
+The dataset used for this project includes customer attributes and behaviors, such as age, payment delay, support calls, tenure, total spend, usage frequency, and contract details.
+Technologies Used
+
+    Python
+    Pandas, NumPy for data manipulation
+    Scikit-learn for machine learning models
+    Matplotlib, Seaborn for data visualization
+
+    ![Screenshot 2024-09-22 205841](https://github.com/user-attachments/assets/e51ff11e-6b91-4a50-80c7-15203d87a0dd)
