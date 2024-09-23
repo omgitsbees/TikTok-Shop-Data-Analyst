@@ -526,4 +526,5 @@ Technologies Used
     Scikit-learn for machine learning models
     Matplotlib, Seaborn for data visualization
 
-    ![Screenshot 2024-09-22 205841](https://github.com/user-attachments/assets/e51ff11e-6b91-4a50-80c7-15203d87a0dd)
+
+![Screenshot 2024-09-22 205841](https://github.com/user-attachments/assets/7a317403-dce0-49f4-b88d-e174da171786)
