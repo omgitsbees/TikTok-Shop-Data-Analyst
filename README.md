@@ -640,3 +640,8 @@ pip install -r requirements.txt
 License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+![Screenshot 2024-10-05 142216](https://github.com/user-attachments/assets/5aa239e4-eb35-45df-9709-0fc3e4771fb7)
+![Screenshot 2024-10-05 142230](https://github.com/user-attachments/assets/c7a7051c-0d51-4a4a-912e-f0b64899930d)
+![Screenshot 2024-10-05 142244](https://github.com/user-attachments/assets/8c2b62ec-cfe9-4ea2-83f0-9752af193bbf)
+![Screenshot 2024-10-05 142956](https://github.com/user-attachments/assets/c186dd77-874b-4ecd-b054-ad764961cff1)
