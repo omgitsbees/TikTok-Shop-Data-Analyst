@@ -528,3 +528,115 @@ Technologies Used
 
 
 ![Screenshot 2024-09-22 205841](https://github.com/user-attachments/assets/7a317403-dce0-49f4-b88d-e174da171786)
+
+-----------------------------------------------------------------------------------------------------------------
+
+TikTok Shop User Recommendations
+
+This project focuses on analyzing user interactions, product information, and sales data to build a recommendation system for TikTok Shop. The data is visualized to identify trends, and machine learning pipelines are created to classify and predict user interactions based on text features.
+Table of Contents
+
+    Project Overview
+    Data Description
+    Setup
+    Project Structure
+    Pipeline
+    Evaluation
+    Visualizations
+    Dependencies
+
+Project Overview
+
+The project processes three datasets: user interactions, product information, and sales data. It explores various aspects of user behavior, product categories, and sales trends using data visualizations. The core component of the project is a machine learning pipeline that uses a combination of TfidfVectorizer and LatentDirichletAllocation to preprocess the text, followed by a RandomForestClassifier to classify user interactions.
+Data Description
+
+    user_interactions.csv: Contains details about users' browsing and purchase behaviors, including attributes like age, gender, and interaction type.
+    product_info.csv: Provides product metadata, including product categories, reviews, and price details.
+    sales_data.csv: Includes the sales transactions, their status, fulfillment data, and the amount paid for each sale.
+
+Setup
+
+    Clone this repository:
+
+    bash
+
+git clone https://github.com/your-username/tiktok-shop-recommendations.git
+
+Navigate to the project directory:
+
+bash
+
+cd tiktok-shop-recommendations
+
+Install the required dependencies:
+
+bash
+
+    pip install -r requirements.txt
+
+    Place your datasets (user_interactions.csv, product_info.csv, and sales_data.csv) inside the data/ directory.
+
+Project Structure
+
+bash
+
+├── data/
+│   ├── user_interactions.csv
+│   ├── product_info.csv
+│   └── sales_data.csv
+├── src/
+│   ├── preprocessing.py      # Functions to preprocess text and sales data
+│   ├── model.py              # Machine learning pipeline and training functions
+│   ├── visualizations.py     # Visualization functions
+│   └── evaluation.py         # Evaluation metrics and plots (ROC, Precision-Recall)
+├── README.md
+├── requirements.txt
+└── main.py                   # Main script to run the project
+
+Pipeline
+
+The machine learning pipeline consists of:
+
+    Text Vectorization: Using TfidfVectorizer to convert user interaction text into numerical features.
+    Dimensionality Reduction: Applying LatentDirichletAllocation (LDA) for topic modeling to reduce the feature space.
+    Classification: Using RandomForestClassifier to classify user interactions into different interaction types.
+
+The pipeline is defined using scikit-learn's Pipeline for easy integration and hyperparameter tuning.
+Evaluation
+
+The following metrics are used to evaluate the recommendation system:
+
+    Accuracy: Measures the percentage of correct predictions.
+    Precision: The ratio of true positives to the sum of true positives and false positives.
+    Recall: The ratio of true positives to the sum of true positives and false negatives.
+    F1 Score: The harmonic mean of precision and recall.
+    ROC Curve: Visualizes the trade-off between true positive rate and false positive rate.
+    Precision-Recall Curve: Evaluates the performance of the classifier, especially when data is imbalanced.
+
+Visualizations
+
+    Sales Trends: Line plots showcasing sales trends over time.
+    Demographics: Distributions of user age, gender, and income.
+    Product Insights: Visualization of product ratings, reviews, and categories.
+    Correlation Analysis: Heatmaps showing correlations between browsing and purchase histories, as well as between sales quantity and amount.
+
+Dependencies
+
+    pandas
+    numpy
+    matplotlib
+    seaborn
+    scikit-learn
+    tensorflow
+    torch
+    nltk
+
+You can install these dependencies using:
+
+bash
+
+pip install -r requirements.txt
+
+License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
